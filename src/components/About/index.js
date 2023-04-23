@@ -19,7 +19,7 @@ const About = () => {
                     <h1>
                         <AnimatedLetters
                             letterClass={letterClass}
-                            strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
+                            strArray={"About".split("")}
                             idx={15}
                         />
                     </h1>
@@ -33,7 +33,7 @@ const About = () => {
                             <FontAwesomeIcon icon={faHtml5} color="#F06529" />
                         </div>
                         <div className="face2">
-                            <FontAwesomeIcon icon={faNodeJs} color="#8CC64D" />
+                        <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
                         </div>
                         <div className="face3">
                             <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
@@ -45,7 +45,7 @@ const About = () => {
                             <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
                         </div>
                         <div className="face6">
-                            <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+                            <FontAwesomeIcon icon={faNodeJs} color="#8CC64D" />
                         </div>
                     </div>
                 </div>

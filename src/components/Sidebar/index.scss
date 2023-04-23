@@ -6,6 +6,7 @@
     top: 0;
     z-index: 3;
     min-height: 500px;
+    font-family: "Coolvetica";
 
     .logo {
         display: block;
@@ -86,6 +87,12 @@
         a.contact-link {
             &:after {
                 content: 'CONTACT';
+            }
+        }
+
+        a.portfolio-link {
+            &:after {
+                content: 'PORTFOLIO';
             }
         }
 
