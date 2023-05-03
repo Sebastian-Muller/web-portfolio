@@ -10,7 +10,7 @@
 }
 
 .tags {
-    color: #ffd700;
+    color: whitesmoke;
     opacity: 0.6;
     position: absolute;
     bottom: 0;
@@ -45,7 +45,7 @@
     h1 {
         font-size: 53px;
         font-family: 'Coolvetica';
-        color: #ffd700;
+        color: whitesmoke;
         font-weight: 400;
         margin-top: 0;
         position: relative;
@@ -55,6 +55,7 @@
         &::before {
             content: '<h1>';
             font-family: 'La Belle Aurore';
+            color: whitesmoke;
             font-size: 18px;
             margin-top: absolute;
             margin-top: -10px;
@@ -66,6 +67,7 @@
         &::after {
             content: '<h1/>';
             font-family: 'La Belle Aurore';
+            color: whitesmoke;
             font-size: 18px;
             line-height: 18px;
             position: absolute;
@@ -79,7 +81,7 @@
 
     p {
         font-style: 13px;
-        color: #fff;
+        color: whitesmoke;
         font-family: sans-serif;
         font-weight: 300;
         min-width: fit-content;

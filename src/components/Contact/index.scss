@@ -36,7 +36,7 @@
     input[type='email'] {
         width: 100%;
         border: 0;
-        background: #115173;
+        background: #BEA6A0;
         height: 50px;
         font-size: 16px;
         color: #fff;
@@ -47,7 +47,7 @@
     textarea {
         width: 100%;
         border: 0;
-        background: #115173;
+        background: #BEA6A0;
         height: 50px;
         font-size: 16px;
         color: #fff;
@@ -57,12 +57,12 @@
     }
 
     .flat-button {
-        color: #ffd700;
+        color: #3D8105;
         font-size: 11px;
         letter-spacing: 3px;
         text-decoration: none;
         padding: 8px 10px;
-        border: 1px solid #ffd700;
+        border: 1px solid #3D8105;
         float: left;
         border-radius: 4px;
         background: 0 0;
@@ -92,13 +92,13 @@
 
 .info-map {
     position: absolute;
-    background: #000;
+    background: #103500;
     top: 40px;
     right: 30%;
     z-index: 999999;
     width: 267px;
     padding: 20px;
-    color: #fff;
+    color: whitesmoke;
     font-family: 'Helvetica';
     font-size: 17px;
     font-weight: 300;
@@ -108,7 +108,7 @@
 
     span {
         font-size: 16px;
-        color: #ffd700;
+        color: #BEA6A1;
         display: block;
         padding-top: 20px;
         }
