@@ -1,0 +1,63 @@
+.loader-container {
+    height: 250px;
+	width: 25%;
+	top: 25%;
+	right: 0;
+	left: 0;
+	box-sizing: border-box;
+	margin: auto;
+	
+	
+	position: relative;
+	overflow: hidden;
+	background-image: url('../../assets/images/land.png'), url('../../assets/images/cloud.png');
+	background-repeat: no-repeat;
+	background-position: 0 230px, 0 30px;
+	animation: land 3s linear infinite, fadeOut 1s 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes land{
+	0%{
+		background-position: 0 230px, 100% 30px;
+	}
+	100%{
+		background-position: 100% 230px, -100% 30px;
+	}
+}
+
+.character{
+	position: absolute;
+	bottom: 0;
+}
+.dino{
+	height: 75px;
+	width: 70px;
+	background-image: url('../../assets/images/dino1.png');
+	background-size: 100% 100%;
+	animation: dino 0.2s linear infinite;
+	left: 10px;
+}
+
+@keyframes dino{
+	0%{
+		background-image: url('../../assets/images/dino1.png');
+	}
+	50%{
+		background-image: url('../../assets/images/dino2.png');
+	}
+	100%{
+		background-image: url('../../assets/images/dino3.png');
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.loader-container {
+		width: 50%;
+		top: -170px;
+		right: 0;
+		box-sizing: border-box;
+		margin: auto;
+		left: 0;
+	}
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-loaders";
+import Loader from "../Loader";
 import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
 import { getDocs, collection } from 'firebase/firestore';
@@ -68,7 +68,7 @@ const Portfolio = () => {
                 </h1>
                 <div>{renderPortfolio(portfolio)}</div>
             </div>
-            <Loader type="ball-clip-rotate-multiple" />
+            <Loader/>
         </>
     );
 }

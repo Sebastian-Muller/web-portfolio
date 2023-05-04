@@ -1,5 +1,5 @@
-import Loader from 'react-loaders'
 import './index.scss'
+import Loader from '../Loader'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useRef, useState } from 'react'
@@ -39,7 +39,7 @@ const Contact = () => {
         <>
             <div className='container contact-page'>
                 <div className='text-zone'>
-                    <h1>
+                    <h1 className='contactH1'>
                         <br />
                         <AnimatedLetters
                             letterClass={letterClass}
@@ -47,9 +47,7 @@ const Contact = () => {
                             idx={15} />
                     </h1>
 
-                    <p>
-                        Ver parrafo!!!
-                    </p>
+                    <p>if you're looking for a developer to add to your team, I'd love to hear from you!</p>
                     <div className='contact-form'>
                         <form ref={form} onSubmit={sendEmail}>
                             <ul>
@@ -89,7 +87,7 @@ const Contact = () => {
                     </MapContainer>
                 </div>
             </div>
-            <Loader type="ball-clip-rotate-multiple" />
+            <Loader/>
         </>
     )
 

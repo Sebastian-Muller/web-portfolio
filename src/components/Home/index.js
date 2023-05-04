@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-s.png'
 import Avatar from './Avatar'
 import './index.scss'
+import Loader from '../Loader'
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -39,15 +39,14 @@ const Home = () => {
                             idx={22}
                         />
                     </h1>
-                    <h2>Front End Developer / JavaScript Expert / Youtuber</h2>
+                    <h2>Front-End Developer / Back-End Developer </h2>
                     <Link to="/contact" className="flat-button">
                         CONTACT ME
                     </Link>
                 </div>
                 <Avatar /> 
             </div>
-
-            <Loader type="ball-clip-rotate-multiple"/>
+            <Loader/>
         </>
     )
 }
