@@ -98,6 +98,12 @@
             }
         }
 
+        a.certificates-link {
+            &:after {
+                content: 'CERTIFICATES';
+            }
+        }
+
         a.active {
             svg {
                 color: #3D6510;

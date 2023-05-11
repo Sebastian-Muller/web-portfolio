@@ -8,6 +8,8 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
 
+// <-----------  LETTER ANIMATION ----------->    
+
     const [letterClass, setLetterClass] = useState('text-animate')
     const form = useRef()
 
@@ -17,6 +19,7 @@ const Contact = () => {
         }, 3000)
     }, [])
 
+// <-----------  Email js ----------->    
 
     const sendEmail = (e) => {
         e.preventDefault()

@@ -7,6 +7,8 @@ import { addDoc, collection } from 'firebase/firestore';
 const Home = () => {
     const form = useRef();
 
+// <-----------  UPLOAD PORTFOLIO DATA ----------->
+
     const submitPortfolio = (e) => {
         e.preventDefault();
         const name = form.current[0]?.value;
@@ -55,13 +57,68 @@ const Home = () => {
         }
     }
 
+    // <-----------  UPLOAD CERTIFICATES DATA ----------->
+    
+    const submitCertificate = (e) => {
+        e.preventDefault();
+        const name = form.current[0]?.value;
+        const description = form.current[1]?.value;
+
+        const image = form.current[2]?.files[0];
+
+        const storageRef = ref(storage, `certificates/${image.name}`);
+
+        uploadBytes(storageRef, image).then(
+            (snapshot) => {
+                getDownloadURL(snapshot.ref).then((downloadUrl) => {
+                    saveCertificate({
+                        name,
+                        description,
+                        image: downloadUrl
+                    })
+                }, (error) => {
+                    console.log(error);
+                    saveCertificate({
+                        name,
+                        description,
+                        image: null
+                    })
+                })
+            }, (error) => {
+                console.log(error);
+                saveCertificate({
+                    name,
+                    description,
+                    image: null
+                })
+            }
+        )
+    }
+
+    const saveCertificate = async (certificate) => {
+        try {
+            await addDoc(collection(db, 'certificates'), certificate);
+            window.location.reload(false);
+        } catch (error) {
+            alert('Failed to add certificate');
+        }
+    }
+
     return (
         <div className="dashboard">
-
+<h2>Upload portfolio</h2>
             <form ref={form} onSubmit={submitPortfolio}>
                 <p><input type="text" placeholder="Name" /></p>
                 <p><textarea placeholder="Description" /></p>
                 <p><input type="text" placeholder="Url" /></p>
+                <p><input type="file" placeholder="Image" /></p>
+                <button type="submit">Submit</button>
+                <button onClick={() => auth.signOut()}>Sign out</button>
+            </form>
+<h2>Upload certificate</h2>
+            <form ref={form} onSubmit={submitCertificate}>
+                <p><input type="text" placeholder="Name" /></p>
+                <p><textarea placeholder="Description" /></p>
                 <p><input type="file" placeholder="Image" /></p>
                 <button type="submit">Submit</button>
                 <button onClick={() => auth.signOut()}>Sign out</button>

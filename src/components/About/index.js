@@ -45,6 +45,11 @@ const About = () => {
                     <p>if you're looking for a developer to add to your team, I'd love to hear from you!</p>
                 </div>
                 <div className="stage-cube-cont">
+                        <div className='stars-background'>
+                            <div className='stars'></div>
+                            <div className='stars2'></div>
+                            <div className='stars3'></div>
+                        </div>
                     <div className="cubespinner">
                         <div className="face1">
                             <FontAwesomeIcon icon={faHtml5} color="#F06529" />

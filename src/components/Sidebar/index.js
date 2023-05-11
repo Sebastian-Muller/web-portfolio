@@ -3,7 +3,7 @@ import './index.scss'
 import LogoS from '../../assets/images/selfie.jpg'
 import LogoSubtitl from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faClose, faEnvelope, faHome, faSuitcase, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faClose, faEnvelope, faHome, faSuitcase, faUser, faCertificate, faVcard } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { useState } from 'react'
 
@@ -30,6 +30,9 @@ const Sidebar = () => {
             <NavLink onClick={()=> setShowNav(false)} exact="true" activeclassname="active" className="portfolio-link" to="/portfolio">
                 <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
             </NavLink>
+            <NavLink onClick={()=> setShowNav(false)} exact="true" activeclassname="active" className="certificates-link" to="/certificates">
+                <FontAwesomeIcon icon={faCertificate} color="#4d4d4e"/>
+            </NavLink>
             <FontAwesomeIcon 
             onClick={()=> setShowNav(false)}
             icon={faClose}
@@ -39,21 +42,26 @@ const Sidebar = () => {
             />
         </nav>
         <ul>
+        <li>
+                <a target="_blank" rel='noreferrer' href='https://www.canva.com/design/DAFTTXTESgw/0KQ9KYpxTqE1YZUyffqrog/view?utm_content=DAFTTXTESgw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink'>
+                    <FontAwesomeIcon icon={faVcard} color="#4d4d4e" />
+                </a>
+            </li>
             <li>
                 <a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/sebastian-alejandro-muller/'>
-                    <FontAwesomeIcon icon={faLinkedin} color="4d4d4e" />
+                    <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
                 </a>
             </li>
 
             <li>
                 <a target="_blank" rel='noreferrer' href='https://github.com/Sebastian-Muller'>
-                    <FontAwesomeIcon icon={faGithub} color="4d4d4e" />
+                    <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
                 </a>
             </li>
 
             <li>
                 <a target="_blank" rel='noreferrer' href='https://wa.me/5493425963444'>
-                    <FontAwesomeIcon icon={faWhatsapp} color="4d4d4e" />
+                    <FontAwesomeIcon icon={faWhatsapp} color="#4d4d4e" />
                 </a>
             </li>
         </ul>
