@@ -3,12 +3,12 @@ import Loader from '../Loader'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser';
 
 
 const Contact = () => {
 
-// <-----------  LETTER ANIMATION ----------->    
+    // <-----------  LETTER ANIMATION ----------->    
 
     const [letterClass, setLetterClass] = useState('text-animate')
     const form = useRef()
@@ -19,13 +19,13 @@ const Contact = () => {
         }, 3000)
     }, [])
 
-// <-----------  Email js ----------->    
+    // <-----------  Email js ----------->    
 
     const sendEmail = (e) => {
         e.preventDefault()
 
         emailjs
-            .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+            .sendForm('service_id', 'template_id', form.current, 'personal_id')
             .then(
                 () => {
                     alert('Message successfully sent!')
@@ -36,6 +36,7 @@ const Contact = () => {
                 }
             )
     }
+    
 
     return (
 
@@ -61,7 +62,7 @@ const Contact = () => {
                                     <input type='email' name='email' placeholder='Email' required />
                                 </li>
                                 <li>
-                                    <input placeholder='Subject' type='text' name='text' required />
+                                    <input placeholder='Subject' type='text' name='subject' required />
                                 </li>
                                 <li>
                                     <textarea placeholder='Message' name='message' required>
@@ -90,7 +91,7 @@ const Contact = () => {
                     </MapContainer>
                 </div>
             </div>
-            <Loader/>
+            <Loader />
         </>
     )
 
