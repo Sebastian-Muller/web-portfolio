@@ -166,6 +166,11 @@
   }
 
   @media screen and (max-width: 1200px) {
+    .about-page {
+      height: 90vh;
+      overflow-y: hidden;      
+    }
+
     .stage-cube-cont {
       position: initial;
       width: 100%;
@@ -173,5 +178,4 @@
       overflow: visible;
       }
   }
-
   
