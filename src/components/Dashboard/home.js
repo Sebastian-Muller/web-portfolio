@@ -5,16 +5,17 @@ import { addDoc, collection } from 'firebase/firestore';
 
 
 const Home = () => {
-    const form = useRef();
+    const portfolioForm = useRef();
+    const certificateForm = useRef();
 
 // <-----------  UPLOAD PORTFOLIO DATA ----------->
 
     const submitPortfolio = (e) => {
         e.preventDefault();
-        const name = form.current[0]?.value;
-        const description = form.current[1]?.value;
-        const url = form.current[2]?.value;
-        const image = form.current[3]?.files[0];
+        const name = portfolioForm.current[0]?.value;
+        const description = portfolioForm.current[1]?.value;
+        const url = portfolioForm.current[2]?.value;
+        const image = portfolioForm.current[3]?.files[0];
 
         const storageRef = ref(storage, `portfolio/${image.name}`);
 
@@ -61,10 +62,9 @@ const Home = () => {
     
     const submitCertificate = (e) => {
         e.preventDefault();
-        const name = form.current[0]?.value;
-        const description = form.current[1]?.value;
-
-        const image = form.current[2]?.files[0];
+        const name = certificateForm.current[0]?.value;
+        const description = certificateForm.current[1]?.value;
+        const image = certificateForm.current[2]?.files[0];
 
         const storageRef = ref(storage, `certificates/${image.name}`);
 
@@ -107,7 +107,7 @@ const Home = () => {
     return (
         <div className="dashboard">
 <h2>Upload portfolio</h2>
-            <form ref={form} onSubmit={submitPortfolio}>
+            <form ref={portfolioForm} onSubmit={submitPortfolio}>
                 <p><input type="text" placeholder="Name" /></p>
                 <p><textarea placeholder="Description" /></p>
                 <p><input type="text" placeholder="Url" /></p>
@@ -116,7 +116,7 @@ const Home = () => {
                 <button onClick={() => auth.signOut()}>Sign out</button>
             </form>
 <h2>Upload certificate</h2>
-            <form ref={form} onSubmit={submitCertificate}>
+            <form ref={certificateForm} onSubmit={submitCertificate}>
                 <p><input type="text" placeholder="Name" /></p>
                 <p><textarea placeholder="Description" /></p>
                 <p><input type="file" placeholder="Image" /></p>
